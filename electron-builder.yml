@@ -1,0 +1,25 @@
+appId: com.blazz.fm
+productName: Blazz FM
+copyright: Copyright © 2024
+
+directories:
+  output: release
+  buildResources: assets
+
+files:
+  - dist/**/*
+  - assets/**/*
+
+win:
+  target:
+    - portable
+    - nsis
+  icon: assets/icon.png
+
+portable:
+  artifactName: BlazzFM-portable.exe
+
+nsis:
+  artifactName: BlazzFM-setup.exe
+  oneClick: false
+  allowToChangeInstallationDirectory: true

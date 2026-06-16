@@ -1,0 +1,33 @@
+{
+  "name": "blazz-fm",
+  "version": "1.0.0",
+  "description": "Blazz FM — AI-powered floating desktop radio DJ",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:main\" \"npm run dev:renderer\"",
+    "dev:main": "tsc -p tsconfig.node.json && electron .",
+    "dev:renderer": "vite",
+    "build": "npm run build:renderer && npm run build:main",
+    "build:main": "tsc -p tsconfig.node.json",
+    "build:renderer": "vite build",
+    "package": "npm run build && electron-builder --win portable",
+    "package:nsis": "npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.123",
+    "docx": "^9.7.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "concurrently": "^9",
+    "electron": "^36.9.5",
+    "electron-builder": "^26",
+    "typescript": "^5",
+    "vite": "^6"
+  }
+}
